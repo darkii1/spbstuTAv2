@@ -38,21 +38,21 @@ public class TestLab1 {
 
     @Test
     public void Lab1() {
-        //public void CheckSiteOpen()
+
         String Site = "https://jdi-framework.github.io/tests/index.htm";
         driver.get("https://jdi-framework.github.io/tests/index.htm");
         Assert.assertEquals(driver.getCurrentUrl(), Site);
 
         String Title = "Index Page";
 
-        //public void CheckTitle()
+
         Assert.assertEquals(driver.getTitle(), Title);
 
-        //public void CheckLogInAndUserName()
+
         String Login = "epam";
         String Password = "1234";
         String UserName = "PITER CHAILOVSKII";
-        //driver.get("https://jdi-framework.github.io/tests/index.htm");
+
         driver.findElement(By.cssSelector("[href='#']")).click();
         driver.findElement(By.cssSelector("[id = 'Login']")).sendKeys(Login);
         driver.findElement(By.cssSelector("[id = 'Password']")).sendKeys(Password);
@@ -61,11 +61,10 @@ public class TestLab1 {
         Assert.assertEquals(driver.findElement(By.cssSelector("[href='#']")).getText(), UserName);
         Assert.assertEquals(driver.getTitle(), Title);
 
-        //public void CheckImagesAreDisplayed()
-        //driver.get("https://jdi-framework.github.io/tests/index.htm");
+
         Assert.assertEquals((driver.findElements(By.cssSelector("[class = 'benefit-icon']")).size()), 4);
 
-            //public void CheckImagesTextsAreDisplayed()
+
             ArrayList<String> Texts = new ArrayList<String>();
             Texts.add("To include good practices\n" +
                     "and ideas from successful\n" +
@@ -77,7 +76,7 @@ public class TestLab1 {
                     "(about 20 internal and\n" +
                     "some external projects),\n" +
                     "wish to get more…");
-            //driver.get("https://jdi-framework.github.io/tests/index.htm");
+
             Assert.assertEquals((driver.findElements(By.cssSelector("[class = 'benefit-txt']")).size()), 4);
 
             ArrayList<WebElement> TextsUnderIcons;
@@ -86,10 +85,10 @@ public class TestLab1 {
                 Assert.assertEquals(TextsUnderIcons.get(i).getText(), Texts.get(i));
             }
 
-            //public void CheckMainHeaderAndHomePage()
+
             String MainHeader = "EPAM FRAMEWORK WISHES…";
             String HomePage = "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
-            //driver.get("https://jdi-framework.github.io/tests/index.htm");
+
             Assert.assertEquals((driver.findElement(By.cssSelector(".main-title"))).getText(), MainHeader);
             Assert.assertEquals((driver.findElement(By.cssSelector(".main-txt"))).getText(), HomePage);
         }

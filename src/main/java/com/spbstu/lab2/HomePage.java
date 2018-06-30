@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-//import static com.sun.xml.internal.bind.v2.ClassFactory.create;
-
 public class HomePage {
 
     public WebDriver driver;
@@ -34,7 +32,6 @@ public class HomePage {
     }
 
     public void open(TestConfig cfg) {
-       // System.out.printf(create(TestConfig.class).homepage());
         driver.navigate().to(cfg.homepage());
     }
 
@@ -53,14 +50,13 @@ public class HomePage {
         EnterIn.click();
         return LogOutIn.isDisplayed();
     }
-    // TODO wrong method naming !
-    //changed
+
     public String getUsername() {
         return ProfileIcon.getText();
     }
 
     public int getIconsNumber() {
-        //System.out.println(IconsIn.size());
+
         return IconsIn.size();
     }
 
@@ -68,8 +64,7 @@ public class HomePage {
         return TextsIn.get(i).getText();
     }
 
-    // TODO methods with "is" prefix should return boolean values...
-    //changed
+
     public String getMainTitle() {
         return MainTitleIn.getText();
     }

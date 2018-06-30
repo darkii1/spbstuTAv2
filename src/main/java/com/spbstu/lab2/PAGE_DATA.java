@@ -1,8 +1,6 @@
 package com.spbstu.lab2;
 
-// TODO poor naming convention,
-// TODO enums should be like MY_ENUM
-//Changed
+
 public enum PAGE_DATA {
     SITE("https://jdi-framework.github.io/tests/index.htm"),
     TITLE("Index Page"),
