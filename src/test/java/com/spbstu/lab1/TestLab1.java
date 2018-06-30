@@ -65,7 +65,7 @@ public class TestLab1 {
         Assert.assertEquals((driver.findElements(By.cssSelector("[class = 'benefit-icon']")).size()), 4);
 
 
-            ArrayList<String> Texts = new ArrayList<String>();
+        ArrayList<String> Texts = new ArrayList<String>();
             Texts.add("To include good practices\n" +
                     "and ideas from successful\n" +
                     "EPAM projec");
@@ -77,20 +77,26 @@ public class TestLab1 {
                     "some external projects),\n" +
                     "wish to get more…");
 
-            Assert.assertEquals((driver.findElements(By.cssSelector("[class = 'benefit-txt']")).size()), 4);
+        Assert.assertEquals((driver.findElements(By.cssSelector("[class = 'benefit-txt']")).size()), 4);
 
-            ArrayList<WebElement> TextsUnderIcons;
-            TextsUnderIcons = (ArrayList<WebElement>) driver.findElements(By.cssSelector("[class = 'benefit-txt']")); // проверка текста под иконками
+        ArrayList<WebElement> TextsUnderIcons;
+        TextsUnderIcons = (ArrayList<WebElement>) driver.findElements(By.cssSelector("[class = 'benefit-txt']")); // проверка текста под иконками
             for (int i = 0; i < Texts.size(); i++) {
                 Assert.assertEquals(TextsUnderIcons.get(i).getText(), Texts.get(i));
             }
 
+        String MainHeader = "EPAM FRAMEWORK WISHES…";
+        String HomePage = "LOREM IPSUM DOLOR SIT AMET, " +
+                "CONSECTETUR ADIPISICING ELIT, SED DO " +
+                "EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET " +
+                "DOLORE MAGNA ALIQUA. UT ENIM AD MINIM " +
+                "VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO " +
+                "LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT" +
+                " DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN" +
+                " VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
 
-            String MainHeader = "EPAM FRAMEWORK WISHES…";
-            String HomePage = "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
-
-            Assert.assertEquals((driver.findElement(By.cssSelector(".main-title"))).getText(), MainHeader);
-            Assert.assertEquals((driver.findElement(By.cssSelector(".main-txt"))).getText(), HomePage);
+        Assert.assertEquals((driver.findElement(By.cssSelector(".main-title"))).getText(), MainHeader);
+        Assert.assertEquals((driver.findElement(By.cssSelector(".main-txt"))).getText(), HomePage);
         }
     }
 
